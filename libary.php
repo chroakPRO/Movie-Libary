@@ -8,7 +8,7 @@ require "header.php";
           }
 // Vi behöver inget perp statment här eftersom det finns inte user input, så man kan inte dra in information genom
 // denna.
-$sql = "SELECT idMovie, idCategory, idTitle, idDirector, idYear FROM movielib";
+$sql = "SELECT idMovie, idTitle, idDirector, idYear, idGenre FROM movielib INNER JOIN moviecat on movielib.idCategory = moviecat.idCategory";
     //Frågar databasen om allting stämmer, den gör en query.
 $result = mysqli_query($conn, $sql);
 // Här får vi reda på hur många rows vi har i databasen
@@ -25,7 +25,7 @@ if ($resultCheck > 0) {
             	        echo "<td>" . $row["idTitle"] . "</td>";
             	        echo "<td>" . $row["idDirector"] . "</td>";
             	        echo "<td>" . $row["idYear"] . "</td>";
-            	        echo "<td>" . $row["idCategory"] . "</td>";
+            	        echo "<td>" . $row["idGenre"] . "</td>";
 		                echo "<td><a href='edit.inc.php?error=editsubmit&id=".$row['idMovie']."'>Edit</a></td>";
                         echo "<td><a href='/includes/delete.inc.php?error=deletesubmit&id=".$row['idMovie']."'>Delete</a></td>";
 
