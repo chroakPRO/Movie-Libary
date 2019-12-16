@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1
--- Tid vid skapande: 06 dec 2019 kl 17:43
+-- Tid vid skapande: 16 dec 2019 kl 18:51
 -- Serverversion: 10.4.8-MariaDB
 -- PHP-version: 7.3.10
 
@@ -25,49 +25,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur `moviecat`
---
-
-CREATE TABLE `moviecat` (
-  `idPolen` int(11) NOT NULL,
-  `idCategory` int(1) NOT NULL,
-  `idGenre` tinytext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumpning av Data i tabell `moviecat`
---
-
-INSERT INTO `moviecat` (`idPolen`, `idCategory`, `idGenre`) VALUES
-(1, 1, 'Thriller'),
-(2, 2, 'Romantic'),
-(4, 3, 'Comedy'),
-(5, 4, 'Adventure'),
-(6, 5, 'Action');
-
--- --------------------------------------------------------
-
---
 -- Tabellstruktur `movielib`
 --
 
 CREATE TABLE `movielib` (
   `idMovie` int(11) NOT NULL,
-  `idCategory` int(1) NOT NULL,
-  `idTitle` longtext NOT NULL,
-  `idDirector` longtext NOT NULL,
+  `idCategory` tinytext NOT NULL,
+  `idTitle` tinytext NOT NULL,
+  `idDirector` tinytext NOT NULL,
   `idYear` tinytext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Index för dumpade tabeller
+-- Dumpning av Data i tabell `movielib`
 --
 
+INSERT INTO `movielib` (`idMovie`, `idCategory`, `idTitle`, `idDirector`, `idYear`) VALUES
+(1, 'Action', '123', '123', '12367');
+
 --
--- Index för tabell `moviecat`
+-- Index för dumpade tabeller
 --
-ALTER TABLE `moviecat`
-  ADD PRIMARY KEY (`idPolen`);
 
 --
 -- Index för tabell `movielib`
@@ -80,16 +58,10 @@ ALTER TABLE `movielib`
 --
 
 --
--- AUTO_INCREMENT för tabell `moviecat`
---
-ALTER TABLE `moviecat`
-  MODIFY `idPolen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
 -- AUTO_INCREMENT för tabell `movielib`
 --
 ALTER TABLE `movielib`
-  MODIFY `idMovie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `idMovie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

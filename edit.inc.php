@@ -6,11 +6,11 @@ Vilket kommer att skicka tillbaka en till libary.php  */
 if (isset($_GET["error"])) {
 if ($_GET["error"] == "editsubmit") {
 	include 'header.php';
-	// Detta kommer ifrån libary.php titta där för att få mer information, men vi fångar in en GET request som
-    // som har id, och vi sätter ett var bakom den så vi kan enkelt använda den här igen.
-    // Men för att förstå det som står här går jag igenom det lite snabbt, när jag trycker på edit på libary.php så har
-    // den specifka rowen jag tryckte på ett ID, och det specifika idet tar jag här, för att kunna manipulerar bara en
-    // row istället för att ändra alla rows.
+// Detta kommer ifrån libary.php titta där för att få mer information, men vi fångar in en GET request som
+// som har id, och vi sätter ett var bakom den så vi kan enkelt använda den här igen.
+// Men för att förstå det som står här går jag igenom det lite snabbt, när jag trycker på edit på libary.php så har
+// den specifka rowen jag tryckte på ett ID, och det specifika idet tar jag här, för att kunna manipulerar bara en
+// row istället för att ändra alla rows.
 	$id = $_GET['id'];
 // Här väljer vi alla rows från movielib, jag använder mig inte utav * eftersom det är inte speciellt säkert eller
 // bra för databasen, det är något man ska undvika, sen kör jag prep statment vilket du kan se genom ? efter idMovie.
@@ -24,8 +24,9 @@ if ($_GET["error"] == "editsubmit") {
 		exit();
 	} else {
 		/* Här bestämmer vi vad vi ska sätta in efter idMovie=? under ?, "s" står för string och $id står för en
-		var, som vi definerat längst upp i filen, hade vi tillexempel vilja titta efter idMovie  ocb idTitle hade vi
-		haft "ss", $id, $title Vi kommer få exempel på detta lite senare.*/
+	var, som vi definerat längst upp i filen, hade vi tillexempel vilja titta efter idMovie  ocb idTitle hade vi
+		haft "ss", $id, $title Vi kommer få exempel på detta lite senare.
+	*/
 		mysqli_stmt_bind_param($stmt, "s", $id);
 		// Vi kör sedan vårat statment, vi har ju gjort så att $stmt, innehåller databas annslutingen och SQL templaten.
 		mysqli_stmt_execute($stmt);
@@ -36,8 +37,8 @@ if ($_GET["error"] == "editsubmit") {
 		 trycka edit om det inte finns något att edita, så vi kan köra koden utan ett if kommand.
 		Så information som finns på rowen i databasen är sparad i $row */
 		$row = mysqli_fetch_assoc($result);
-	} ?>
-	<div class='form-signup>
+	}
+	?>
 <?php
 	echo "<form action='includes/edit.inc2.php' method='post'>";
 	echo "Here you can edit the movie!";
