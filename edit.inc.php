@@ -46,11 +46,11 @@ if ($_GET["error"] == "editsubmit") {
 	echo "<div style=\"margin: 0 auto; width:100px; text-align:left;\">";
 	echo "<br><br><br>";
 	echo "Category<br>";
-	echo "<input type='radio' name='idCategory' value='Thriller'>Thriller</td><br>";
-	echo "<input type='radio' name='idCategory' value='Romantic'>Romantic</td><br>";
-	echo "<input type='radio' name='idCategory' value='Comedy'>Comedy</td><br>";
-	echo "<input type='radio' name='idCategory' value='Adventure'>Adventure</td><br>";
-	echo "<input type='radio' name='idCategory' value='Action'>Action</td><br><br><br>";
+	echo "<input type='radio' name='idCategory' value='1'>Thriller</td><br>";
+	echo "<input type='radio' name='idCategory' value='2'>Romantic</td><br>";
+	echo "<input type='radio' name='idCategory' value='3'>Comedy</td><br>";
+	echo "<input type='radio' name='idCategory' value='4'>Adventure</td><br>";
+	echo "<input type='radio' name='idCategory' value='5'>Action</td><br><br><br>";
 	echo "</div>";
 	echo "<div class='form-signup'>";
 	// det är så här använder vi $row och sen tablename för att dra ut information från databasen och visa den i HTML

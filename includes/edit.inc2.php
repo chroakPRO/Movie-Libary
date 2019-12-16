@@ -29,7 +29,6 @@ if (isset($_POST['edit-submit'])) {
 			mysqli_stmt_bind_param($stmt, "sssss", $category, $title, $director, $year, $id);
 			mysqli_stmt_execute($stmt);
 			header("Location:../index.php?submit=success");
-
 		}
 	}
 	if (mysqli_query($conn, $sql)) {
@@ -39,7 +38,6 @@ if (isset($_POST['edit-submit'])) {
 		exit;
 	} else {
 		echo "Error deleting record";
-
 	}
 }
 else {
