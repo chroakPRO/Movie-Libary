@@ -13,7 +13,7 @@ $sql = "SELECT idMovie, idCategory, idTitle, idDirector, idYear FROM movielib";
 $result = mysqli_query($conn, $sql);
 // Här får vi reda på hur många rows vi har i databasen
 $resultCheck = mysqli_num_rows($result);
-// Om vi har mer än 0 rows i databasen ska vi visa koden nedan för, vilket är koden som visar tablerna.
+// Om vi har mer än 0 rows i jatabasen ska vi visa koden nedan för, vilket är koden som visar tablerna.
 if ($resultCheck > 0) {
     // För att tabel information som står längst upp inte ska visa sig mer än en gång sätter vi in den innan vi gör
     // while, det gör så att all information från databasen kommer in till samma html TABLE
@@ -32,7 +32,6 @@ if ($resultCheck > 0) {
           echo "</tr>";
 	}
 }
-
 // Om vi inte har några rows i databasen så lägger vi in denna text.
 else {
 	echo "There are no movies in this libary!";

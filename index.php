@@ -50,15 +50,15 @@
 
             <div style="text-align: center; width: 100%;">
                 <div style="margin: 0 auto; width:100px; text-align:left;">
-                    <input type="radio" class="form-radio" name="category" value="Thriller"checked>Thriller
+                    <input type="radio" class="form-radio" name="category" value="1"checked>Thriller
                     <br />
-                    <input type="radio" class="form-radio" name="category" value="Romantic">Romantic
+                    <input type="radio" class="form-radio" name="category" value="2">Romantic
                     <br />
-                    <input type="radio" class="form-radio" name="category" value="Comedy">Comedy
+                    <input type="radio" class="form-radio" name="category" value="3">Comedy
                     <br />
-                    <input type="radio" class="form-radio" name="category" value="Adventure">Adventure
+                    <input type="radio" class="form-radio" name="category" value="4">Adventure
                     <br />
-                    <input type="radio" class="form-radio" name="category" value="Action">Action
+                    <input type="radio" class="form-radio" name="category" value="5">Action
                     <br />
                 </div>
             </div>
